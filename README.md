@@ -5,28 +5,32 @@ A no-frills PsySH-Composer plugin.
 In a nutshell, it provides a `composer psy` subcommand that spawns a [Psy Shell](https://psysh.org/) with autoload
 integration when applicable.
 
+<div align="center">
+  <img alt="composer-psysh in action" src="https://i.imgur.com/OZADJUV.gif">
+</div>
+
 ### Installation
 
-This package is meant to be used as a global requirement of your local Composer installation:
+This package is meant to be used as a global requirement for your Composer installation:
 
 ```bash
-composer global require uma/composer-psysh
+$ composer global require uma/composer-psysh
 ```
 
 Alternatively it can be required on a per-project basis as a development dependency.
 Note that in this case the `psy` subcommand will only be available in the project root.
 
 ```bash
-composer require --dev uma/composer-psysh
+$ composer require --dev uma/composer-psysh
 ```
 
 ### Usage
 
-`composer psy` can be run anywhere and will provide a generic REPL.
-However, when it runs at the root of a project it will silently require the `vendor/autoload.php` script
+`composer psy` can be run anywhere and will spawn a generic REPL.
+However, when it runs at the root of a project it will require the `vendor/autoload.php` script
 so that the project's classes will be readily available in the shell.
 
-The plugin also defines a couple of aliases: `composer repl` and `composer shell`.
+The plugin also defines a couple of other aliases: `composer repl` and `composer shell`.
 
 ### Comparison between `uma/composer-psysh` and `ramsey/composer-repl`
 
