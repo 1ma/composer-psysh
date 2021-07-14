@@ -1,11 +1,11 @@
-# uma/composer-psysh
+## uma/composer-psysh
 
 A no-frills PsySH-Composer plugin.
 
 In a nutshell, it provides a `composer psy` subcommand that spawns a [Psy Shell](https://psysh.org/) with autoload
 integration when applicable.
 
-## Installation
+### Installation
 
 This package is meant to be used as a global requirement of your local Composer installation:
 
@@ -20,7 +20,7 @@ Note that in this case the `psy` subcommand will only be available in the projec
 composer require --dev uma/composer-psysh
 ```
 
-## Usage
+### Usage
 
 `composer psy` can be run anywhere and will provide a generic REPL.
 However, when it runs at the root of a project it will silently require the `vendor/autoload.php` script
@@ -28,7 +28,7 @@ so that the project's classes will be readily available in the shell.
 
 The plugin also defines a couple of aliases: `composer repl` and `composer shell`.
 
-## Comparison between `uma/composer-psysh` and `ramsey/composer-repl`
+### Comparison between `uma/composer-psysh` and `ramsey/composer-repl`
 
 This package was inspired by [`ramsey/composer-repl`](https://github.com/ramsey/composer-repl).
 In fact, it only provides a subset of its features.
@@ -42,6 +42,6 @@ Second, `ramsey/composer-repl` has additional functionality to integrate PHPUnit
 Because of this it has a hard dependency on `phpunit/phpunit`.
 I wasn't keen on being forced to pull PHPUnit alongside the plugin, especially since I don't need that feature.
 
-## Caveats
+### Caveats
 
 Only works on Unix environments (for now?)
