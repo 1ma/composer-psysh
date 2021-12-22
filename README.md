@@ -24,6 +24,24 @@ Note that in this case the `psy` subcommand will only be available in the projec
 $ composer require --dev uma/composer-psysh
 ```
 
+#### Composer 2.2 and above
+
+Starting from version 2.2.0 Composer requires plugins to be whitelisted in the `composer.json` file.
+After updating to +2.2, the first time you run `composer shell` it will ask you once if you want to
+add the plugin to the `allow-plugins` config section.
+You'll need to answer Yes.
+
+```
+$ composer shell
+uma/composer-psysh contains a Composer plugin which is currently not in your allow-plugins config. See https://getcomposer.org/allow-plugins
+Do you trust "uma/composer-psysh" to execute code and wish to enable it now? (writes "allow-plugins" to composer.json) [y,n,d,?] y
+Psy Shell v0.11.0 (PHP 8.1.0 — cli) by Justin Hileman
+Active Autoloaders:
+  /home/marcel/.config/composer/vendor/autoload.php
+
+>>> "oh well"
+```
+
 ### Usage
 
 `composer psy` can be run anywhere and will spawn a generic REPL.
