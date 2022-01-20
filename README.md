@@ -57,7 +57,7 @@ In fact, it only provides a subset of its features.
 I decided to write my own version for a couple of reasons:
 
 First, Ben Ramsey's plugin requires PHP 7.4 or later, which is too restrictive for me.
-`uma/composer-psysh` allows a wide range of PHP versions: from 5.5 to 8.0.
+`uma/composer-psysh` allows a wide range of PHP versions: from 5.5 to 8.1.
 This is pretty similar to the range of versions allowed by PsySH and Composer themselves.
 
 Second, `ramsey/composer-repl` has additional functionality to integrate PHPUnit into PsySH.

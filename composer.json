@@ -4,7 +4,7 @@
     "description": "No-frills PsySH-Composer plugin",
     "license": "MIT",
     "require": {
-        "php": "^5.5|^7.0|^8.0",
+        "php": "^5.5||^7.0||^8.0",
         "composer-plugin-api": "^1.0|^2.0",
         "psy/psysh": "~0.1"
     },
