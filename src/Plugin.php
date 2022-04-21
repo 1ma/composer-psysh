@@ -17,7 +17,7 @@ final class Plugin implements Capable, CommandProvider, PluginInterface
     {
         self::$autoloadScripts = [$composer->getConfig()->get('home') . '/vendor/autoload.php'];
 
-        if (\file_exists($localProjectAutoload = getcwd() . '/vendor/autoload.php')) {
+        if (\file_exists($localProjectAutoload = \getcwd() . '/vendor/autoload.php')) {
             self::$autoloadScripts[] = $localProjectAutoload;
         }
     }
