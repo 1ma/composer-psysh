@@ -15,7 +15,11 @@ final class Plugin implements Capable, CommandProvider, PluginInterface
 
     public function activate(Composer $composer, IOInterface $io)
     {
-        self::$autoloadScripts = [$composer->getConfig()->get('home') . '/vendor/autoload.php'];
+        self::$autoloadScripts = [];
+        
+        if (\file_exists($userAutoload = $composer->getConfig()->get('home') . '/vendor/autoload.php')) {
+            self::$autoloadScripts[] = $userAutoload;
+        }
 
         if (\file_exists($localProjectAutoload = \getcwd() . '/vendor/autoload.php')) {
             self::$autoloadScripts[] = $localProjectAutoload;
