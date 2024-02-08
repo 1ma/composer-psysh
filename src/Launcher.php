@@ -41,7 +41,7 @@ final class Launcher extends BaseCommand
             ->setDescription('Psy Shell with autoload integration');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         Config::disableProcessTimeout();
 
