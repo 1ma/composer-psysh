@@ -1,3 +1,7 @@
+### [0.3.0] - 2024-02-09
+
+  * (Breaking Change) Fix symfony/console 7.0 incompatibility and bump minimum PHP and PsySH versions
+
 ### [0.2.1] - 2021-08-04
 
   * (Bugfix) Don't assume $COMPOSER_HOME/vendor/autoload.php exists, by @nsrosenqvist
@@ -11,6 +15,7 @@
 
   * Initial release
 
+[0.3.0]: https://github.com/1ma/composer-psysh/compare/v0.2.1...v0.3.0
 [0.2.1]: https://github.com/1ma/composer-psysh/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/1ma/composer-psysh/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/1ma/composer-psysh/tree/b298fc33a0e2f879088f124b01501f5e022be9c4
