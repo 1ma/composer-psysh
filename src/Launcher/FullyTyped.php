@@ -1,6 +1,8 @@
 <?php
 
-namespace UMA\Composer\PsySH;
+declare(strict_types=1);
+
+namespace UMA\Composer\PsySH\Launcher;
 
 use Composer\Command\BaseCommand;
 use Composer\Config;
@@ -9,32 +11,26 @@ use Psy\Shell;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-final class Launcher extends BaseCommand
+/**
+ * Launcher class for symfony/console 8.x and newer
+ */
+final class FullyTyped extends BaseCommand
 {
-    /**
-     * @var string[]
-     */
-    private $autoloadScripts;
+    /** @var string[] */
+    private array $autoloadScripts;
+    private Configuration $configuration;
 
-    /**
-     * @var Configuration
-     */
-    private $configuration;
-
-    /**
-     * @param string[] $autoloadScripts
-     */
-    public function __construct(array $autoloadScripts)
+    public function __construct(string ...$autoloadScripts)
     {
         $this->autoloadScripts = $autoloadScripts;
         $this->configuration = new Configuration([
-            'startupMessage' => self::startupMessage($autoloadScripts)
+            'startupMessage' => self::startupMessage(...$autoloadScripts)
         ]);
 
         parent::__construct();
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this->setName('psy')
             ->setAliases(['repl', 'shell'])
@@ -52,11 +48,11 @@ final class Launcher extends BaseCommand
         return (new Shell($this->configuration))->run();
     }
 
-    private static function startupMessage(array $autoloadScripts)
+    private static function startupMessage(string ...$autoloadScripts): string
     {
-        $message = "Active Autoloaders:\n";
+        $message = 'Active Autoloaders:' . PHP_EOL;
         foreach ($autoloadScripts as $autoloadScript) {
-            $message .= "  $autoloadScript\n";
+            $message .= '  ' . $autoloadScript . PHP_EOL;
         }
 
         return $message;

@@ -14,7 +14,10 @@
     "autoload": {
         "psr-4": {
             "UMA\\Composer\\PsySH\\": "src/"
-        }
+        },
+        "files": [
+            "aliasing.php"
+        ]
     },
     "extra": {
         "class": "UMA\\Composer\\PsySH\\Plugin"

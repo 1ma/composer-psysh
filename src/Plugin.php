@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace UMA\Composer\PsySH;
 
 use Composer\Composer;
@@ -11,12 +13,12 @@ use Composer\Plugin\PluginInterface;
 final class Plugin implements Capable, CommandProvider, PluginInterface
 {
     /** @var string[] */
-    private static $autoloadScripts;
+    private static array $autoloadScripts;
 
     public function activate(Composer $composer, IOInterface $io)
     {
         self::$autoloadScripts = [];
-        
+
         if (\file_exists($userAutoload = $composer->getConfig()->get('home') . '/vendor/autoload.php')) {
             self::$autoloadScripts[] = $userAutoload;
         }
@@ -34,13 +36,13 @@ final class Plugin implements Capable, CommandProvider, PluginInterface
     {
     }
 
-    public function getCapabilities()
+    public function getCapabilities(): array
     {
         return [CommandProvider::class => self::class];
     }
 
-    public function getCommands()
+    public function getCommands(): array
     {
-        return [new Launcher(self::$autoloadScripts)];
+        return [new Launcher(...self::$autoloadScripts)];
     }
 }
