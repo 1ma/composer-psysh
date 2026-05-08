@@ -1,3 +1,7 @@
+### [0.3.1] - 2026-05-08
+
+* (Bugfix) Fix all known symfony/console versioning issues with aliasing of the Launcher class
+
 ### [0.3.0] - 2024-02-09
 
   * (Breaking Change) Fix symfony/console 7.0 incompatibility and bump minimum PHP and PsySH versions
@@ -15,6 +19,7 @@
 
   * Initial release
 
+[0.3.1]: https://github.com/1ma/composer-psysh/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/1ma/composer-psysh/compare/v0.2.1...v0.3.0
 [0.2.1]: https://github.com/1ma/composer-psysh/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/1ma/composer-psysh/compare/v0.1.0...v0.2.0
